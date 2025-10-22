@@ -57,7 +57,8 @@
 
     .section h2 {
       color: #00bfff;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+      text-align: center;
     }
 
     ul {
@@ -75,17 +76,6 @@
 
     ul li:hover {
       background: #2b2b2b;
-    }
-
-    img {
-      display: block;
-      margin: 30px auto;
-      border-radius: 15px;
-      width: 220px;
-      height: 220px;
-      object-fit: cover;
-      border: 2px solid #00bfff;
-      box-shadow: 0 0 20px #00bfff40;
     }
 
     a {
@@ -155,6 +145,39 @@
       padding-bottom: 20px;
     }
 
+    /* ---- photo row styling ---- */
+    .photo-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .photo-row img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 15px;
+      border: 2px solid #00bfff;
+      box-shadow: 0 0 20px #00bfff40;
+      transition: transform 0.3s, opacity 0.8s;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    .photo-row img:nth-child(1) { animation-delay: 0.2s; }
+    .photo-row img:nth-child(2) { animation-delay: 0.4s; }
+    .photo-row img:nth-child(3) { animation-delay: 0.6s; }
+
+    .photo-row img:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
   </style>
 </head>
 <body>
@@ -187,7 +210,11 @@
 
   <div class="section">
     <h2>my silly ah friends</h2>
-    <img src="image-fotor-2025102123013.png" alt="picture of friends" />
+    <div class="photo-row">
+      <img src="image-fotor-2025102123013.png" alt="friend 1" />
+      <img src="Screenshot 2025-10-21 233424.png" alt="friend 2" />
+      <img src="Screenshot 2025-10-21 224224.png" alt="friend 3" />
+    </div>
   </div>
 
   <div class="section">
